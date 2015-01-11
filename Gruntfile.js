@@ -27,7 +27,7 @@ module.exports = function (grunt) {
       },
       css: {
         files: ['src/**/*.scss'],
-        tasks: ['libsass', 'cssmin']
+        tasks: ['libsass', 'autoprefixer', 'cssmin']
       },
       html: {
         files: ['**/*.html'],
@@ -46,6 +46,19 @@ module.exports = function (grunt) {
       }
     },
 
+    autoprefixer: {
+      app: {
+        src: 'build/app.css',
+      }
+    },
+
+    open: {
+      delayed: {
+        path: 'http://localhost:2424',
+        app: 'Google Chrome'
+      }
+    },
+
     cssmin: {
       combine: {
         files: {
@@ -56,7 +69,7 @@ module.exports = function (grunt) {
 
     concurrent: {
       target: {
-        tasks: ['connect', 'watch'],
+        tasks: ['connect', 'open', 'watch'],
         options: {
           logConcurrentOutput: true
         }
@@ -90,7 +103,7 @@ module.exports = function (grunt) {
 
   });
 
-grunt.registerTask('server', ['concurrent:target']);
-grunt.registerTask('build', ['jshint', 'uglify', 'libsass', 'cssmin']);
+grunt.registerTask('default', ['concurrent:target']);
+grunt.registerTask('build', ['jshint', 'uglify', 'libsass', 'autoprefixer', 'cssmin']);
 
 };

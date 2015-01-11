@@ -150,7 +150,6 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -264,8 +263,6 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -321,10 +318,126 @@ td, th {
   padding: 0; }
 
 html {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  box-sizing: border-box; }
+  @media (min-width: 300px) {
+    html {
+      font-size: 17px; } }
+  @media (min-width: 400px) {
+    html {
+      font-size: 18px; } }
+  @media (min-width: 500px) {
+    html {
+      font-size: 19px; } }
+  @media (min-width: 600px) {
+    html {
+      font-size: 20px; } }
+  @media (min-width: 700px) {
+    html {
+      font-size: 21px; } }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+.m-header {
   background: #FFF url('/img/busch.jpg') no-repeat center center;
   background-size: cover;
-  height: 100%; }
+  padding-bottom: 10rem;
+  position: relative;
+  z-index: -10;
+  overflow: hidden; }
+  @media (min-width: 800px) {
+    .m-header {
+      padding-bottom: 12rem; } }
+  .m-header:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1; }
+  .m-header > * {
+    margin: 0;
+    padding: 0;
+    color: #FFF;
+    text-align: center;
+    z-index: 100; }
+  .m-header h1 {
+    font-size: 14vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1; }
+  .m-header h5 {
+    font-weight: 200;
+    font-size: 1rem;
+    margin: 0 1rem;
+    line-height: 1; }
+    @media (min-width: 400px) {
+      .m-header h5 {
+        font-size: 1.2rem; } }
+    @media (min-width: 900px) {
+      .m-header h5 {
+        font-size: 1.4rem; } }
+    @media (min-width: 1100px) {
+      .m-header h5 {
+        font-size: 1.5rem; } }
 
-body {
-  background-color: rgba(0, 0, 0, 0.5);
-  height: 100%; }
+.m-header .shannon {
+  width: 250px;
+  height: 200px;
+  background: transparent url('/img/shannon.png') no-repeat 0 0;
+  background-size: cover;
+  position: absolute;
+  bottom: -10px;
+  right: 10px; }
+  @media (min-width: 600px) {
+    .m-header .shannon {
+      width: 300px;
+      height: 250px; } }
+  @media (min-width: 800px) {
+    .m-header .shannon {
+      width: 400px;
+      height: 350px; } }
+
+.tossing {
+  -webkit-animation-name: tossing;
+          animation-name: tossing;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite; }
+
+@-webkit-keyframes tossing {
+  0% {
+    -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg); }
+
+  50% {
+    -webkit-transform: rotate(1deg);
+            transform: rotate(1deg); }
+
+  100% {
+    -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg); } }
+
+@keyframes tossing {
+  0% {
+    -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg); }
+
+  50% {
+    -webkit-transform: rotate(1deg);
+            transform: rotate(1deg); }
+
+  100% {
+    -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg); } }

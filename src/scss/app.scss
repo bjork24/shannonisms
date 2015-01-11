@@ -1,12 +1,6 @@
 @import 'vendor/normalize';
-
-html {
-  background: #FFF url('/img/busch.jpg') no-repeat center center;
-  background-size: cover;
-  height: 100%;
-}
-
-body {
-  background-color: rgba(0,0,0,0.5);
-  height: 100%;
-}
+@import 'variables';
+@import 'mixins';
+@import 'globals';
+@import 'layout';
+@import 'modules';
