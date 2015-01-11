@@ -29,9 +29,7 @@
   // private controller method
   var controller = {
     index : function() {
-      get('partials/index', function(html) {
-        opts.yield.innerHTML = html;
-      });
+      opts.yield.innerHTML = getQuote();
     },
     submit : function() {
       console.log('submit');
@@ -47,14 +45,15 @@
         console.log('quote index');
       },
       entry : function(ctx) {
-        console.log('quote entry');
+        opts.yield.innerHTML = getQuote(ctx.params.id);
       }
     }
   };
 
   // return random or id quote
   var getQuote = function(id) {
-    
+    opts.quoteId = ( isUndef(id) ) ? (Math.floor(Math.random()*opts.quotes.length)) : (parseInt(id)-1) ;
+    return opts.quotes[opts.quoteId];
   };
 
   // get method for partials and data

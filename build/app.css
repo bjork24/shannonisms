@@ -319,3 +319,12 @@ table {
 
 td, th {
   padding: 0; }
+
+html {
+  background: #FFF url('/img/busch.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100%; }
+
+body {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%; }
