@@ -1,13 +1,14 @@
-(function(doc, win){
+(function(doc){
 
   'use strict';
 
   // options
   var opts = {
-    cache  : {},
-    quotes : [],
-    title  : 'Shannonisms',
-    yield  : doc.querySelectorAll('#js-yield')[0]
+    cache     : {},
+    quotes    : [],
+    title     : 'Shannonisms',
+    yield     : doc.querySelectorAll('#js-yield')[0],
+    quoteLink : doc.querySelectorAll('#js-quote-link')[0]
   };
 
   // public router method
@@ -35,14 +36,20 @@
       console.log('submit');
     },
     disclaimer : function() {
-      console.log('disclaimer');
+      get('partials/disclaimer', function(html) {
+        opts.yield.innerHTML = html;
+        setQuoteLink();
+      });
     },
     notFound : function() {
       console.log('404');
     },
     quotes : {
       index : function() {
-        console.log('quote index');
+        get('partials/quotes', function(html) {
+          opts.yield.innerHTML = html;
+          console.log(opts);
+        });
       },
       entry : function(ctx) {
         opts.yield.innerHTML = getQuote(ctx.params.id);
@@ -52,8 +59,25 @@
 
   // return random or id quote
   var getQuote = function(id) {
-    opts.quoteId = ( isUndef(id) ) ? (Math.floor(Math.random()*opts.quotes.length)) : (parseInt(id)-1) ;
-    return opts.quotes[opts.quoteId];
+    if ( isUndef(id) ) {
+      opts.qId = Math.floor(Math.random()*opts.quotes.length);
+      setQuoteLink(opts.qId);
+    } else {
+      opts.qId = parseInt(id);
+      setQuoteLink();
+    }
+    return opts.quotes[opts.qId];
+  };
+
+  // set the quote link
+  var setQuoteLink = function(id) {
+    if ( isUndef(id) ) {
+      opts.quoteLink.innerHTML = 'New quote';
+      opts.quoteLink.setAttribute('href', '/');
+    } else {
+      opts.quoteLink.innerHTML = 'Quote #' + id;
+      opts.quoteLink.setAttribute('href', '/quote/' + id);
+    }
   };
 
   // get method for partials and data
@@ -83,8 +107,9 @@
   // simple undefined check
   function isUndef(o) { return typeof o === 'undefined'; }
 
+  // return the only public methodaaaa
   return {
     router : router
   };
 
-}(document, window)).router();
+}(document)).router();

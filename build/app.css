@@ -351,8 +351,9 @@ a {
   background-size: cover;
   padding-bottom: 10rem;
   position: relative;
-  z-index: -10;
-  overflow: hidden; }
+  z-index: 0;
+  overflow: hidden;
+  display: block; }
   @media (min-width: 800px) {
     .m-header {
       padding-bottom: 12rem; } }
@@ -469,3 +470,21 @@ a {
     .m-quote {
       font-size: 2rem;
       padding: 3rem 5rem; } }
+  .m-quote p:first-child, .m-quote p:last-child {
+    margin-top: 0;
+    margin-bottom: 0; }
+
+.m-footer {
+  padding: 1rem;
+  font-size: 0.8rem; }
+  .m-footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #555; }
+    .m-footer ul li {
+      display: inline-block;
+      margin-left: 1.5rem; }
+      .m-footer ul li:first-child {
+        margin: 0; }
