@@ -18,11 +18,11 @@
       opts.quotes = data.quotes;
       // now that data is cached, execute routing
       page('/', controller.index);
-      page('/submit', controller.submit);
-      page('/disclaimer', controller.disclaimer);
+      page('/submit', controller.page);
+      page('/disclaimer', controller.page);
       page('/quotes', controller.quotes.index);
       page('/quote/:id', controller.quotes.entry);
-      page('*', controller.notFound);
+      page('*', controller.page);
       page({ hashbang: true });
     });
   };
@@ -32,17 +32,12 @@
     index : function() {
       opts.yield.innerHTML = getQuote();
     },
-    submit : function() {
-      console.log('submit');
-    },
-    disclaimer : function() {
-      get('partials/disclaimer', function(html) {
+    page : function(ctx) {
+      ctx.path = ( ctx.path === '/submit' || ctx.path === '/disclaimer' ) ? ctx.path : '/404' ;
+      get('partials' + ctx.path, function(html) {
         opts.yield.innerHTML = html;
         setQuoteLink();
       });
-    },
-    notFound : function() {
-      console.log('404');
     },
     quotes : {
       index : function() {

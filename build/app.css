@@ -474,6 +474,22 @@ a {
     margin-top: 0;
     margin-bottom: 0; }
 
+.m-submit textarea {
+  border: 0;
+  display: block;
+  width: 100%;
+  margin: 0 auto 1rem;
+  text-align: center; }
+.m-submit a, .m-submit input[type="submit"] {
+  background-color: #DDD;
+  display: inline-block;
+  border: 0;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin: 0;
+  max-height: 48px;
+  vertical-align: middle; }
+
 .m-footer {
   padding: 1rem;
   font-size: 0.8rem; }
