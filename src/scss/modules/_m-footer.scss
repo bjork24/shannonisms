@@ -12,7 +12,10 @@ $m : '.m-footer';
     color: $color-quote;
     li {
       display: inline-block;
-      margin-left: 1.5rem;
+      margin-left: 1rem;
+      @media(min-width: 400px) {
+        margin-left: 1.5rem;
+      }
       &:first-child {
         margin: 0;
       }

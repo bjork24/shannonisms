@@ -485,6 +485,9 @@ a {
     color: #555; }
     .m-footer ul li {
       display: inline-block;
-      margin-left: 1.5rem; }
+      margin-left: 1rem; }
+      @media (min-width: 400px) {
+        .m-footer ul li {
+          margin-left: 1.5rem; } }
       .m-footer ul li:first-child {
         margin: 0; }
