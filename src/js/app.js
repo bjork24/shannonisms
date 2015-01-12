@@ -20,6 +20,7 @@
       page('/', controller.index);
       page('/submit', controller.page);
       page('/disclaimer', controller.page);
+      page('/thanks', controller.page);
       page('/quotes', controller.quotes.index);
       page('/quote/:id', controller.quotes.entry);
       page('*', controller.page);
@@ -33,7 +34,7 @@
       opts.yield.innerHTML = getQuote();
     },
     page : function(ctx) {
-      ctx.path = ( ctx.path === '/submit' || ctx.path === '/disclaimer' ) ? ctx.path : '/404' ;
+      ctx.path = ( ['/submit', '/disclaimer', '/thanks'].indexOf(ctx.path) >= 0 ) ? ctx.path : '/404' ;
       get('partials' + ctx.path, function(html) {
         opts.yield.innerHTML = html;
         setQuoteLink();
