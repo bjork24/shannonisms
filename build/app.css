@@ -488,7 +488,8 @@ a {
   font-size: 1rem;
   margin: 0;
   max-height: 48px;
-  vertical-align: middle; }
+  vertical-align: middle;
+  border-radius: 0; }
 
 .m-footer {
   padding: 1rem;
