@@ -1,9 +1,7 @@
 <template>
   <div>
-    <h1 id="title">Welcome!</h1>
-    <ul>
-      <li v-for="quote in quotes">{{ quote }}</li>
-    </ul>
+    <h1 id="title">{{ quote }}</h1>
+    <nuxt-link :to="/quote/+quoteId">Quote #{{ quoteId }}</nuxt-link> | 
     <nuxt-link to="/submit">About page</nuxt-link>
   </div>
 </template>
@@ -18,7 +16,11 @@ export default {
     ]
   },
   data() {
-    return { quotes };
+    const quoteId = Math.floor(Math.random() * quotes.length);
+    return {
+      quote: quotes[quoteId],
+      quoteId
+    };
   }
 }
 </script>
