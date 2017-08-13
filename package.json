@@ -1,31 +1,29 @@
 {
   "name": "shannonisms",
   "version": "1.0.0",
-  "description": "Static site powering shannonisms.com",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "nuxt generate",
+    "prod": "nuxt build && nuxt start",
+    "dev": "nuxt"
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/bjork24/shannonisms.git"
+    "url": "git+https://github.com/bjork24/shannonisms.git"
   },
-  "author": "Dan Chilton",
-  "license": "MIT",
+  "keywords": [],
+  "author": "Dan Chilton <dan.chilton@gmail.com>",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/bjork24/shannonisms/issues"
   },
-  "homepage": "https://github.com/bjork24/shannonisms",
+  "homepage": "https://github.com/bjork24/shannonisms#readme",
+  "dependencies": {
+    "nuxt": "^1.0.0-rc4"
+  },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-autoprefixer": "^2.1.0",
-    "grunt-bytesize": "^0.1.1",
-    "grunt-concurrent": "^1.0.0",
-    "grunt-contrib-connect": "^0.8.0",
-    "grunt-contrib-cssmin": "^0.10.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-livereload": "^0.1.2",
-    "grunt-contrib-uglify": "^0.6.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-libsass": "^0.2.0",
-    "grunt-notify": "^0.4.1",
-    "grunt-open": "^0.2.3",
-    "matchdep": "^0.3.0"
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6"
   }
 }
