@@ -57,7 +57,7 @@ export default [
   `I just want to tell everyone Happy Easter, and to our Jewish friends, Happy Hanukkah.`,
   `I don't like that play. I've seen it go opposite more often than positive.`,
   `The United States is the greatest country in America!`,
-  `Mike: Yeah when he really connects it's just like one of them, ahhhh one of them, Hey! what do you call those mountains that blow up?<br/><br/>Joe: Volcanoes.<br/><br/>Mike: Yeah, he is just like a volcano!`,
+  `Mike: Yeah when he really connects it's just like one of them, ahhhh one of them, Hey! what do you call those mountains that blow up?\n\nJoe: Volcanoes.\n\nMike: Yeah, he is just like a volcano!`,
   `You know, if you can keep Geronimo Pena healthy, you can win the Pulitzer Prize in Health.`,
   `The key thing is, he has that photogenic mind.`,
   `The fans are kind of quiet right now. They're preserving their injury.`,

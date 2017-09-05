@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 id="title">{{ quote }}</h1>
-    <nuxt-link :to="/quote/+quoteId">Quote #{{ quoteId }}</nuxt-link> | 
+    <nuxt-link :to="/quote/+quoteId">Quote #{{ quoteId }}</nuxt-link> |
     <nuxt-link to="/submit">About page</nuxt-link>
   </div>
 </template>
@@ -10,7 +10,7 @@
 import quotes from '../quotes.js';
 export default {
   head: {
-    title: 'Home page ð',
+    title: 'Home page',
     meta: [
       { hid: 'description', name: 'description', content: 'Home page description' }
     ]

@@ -8,7 +8,7 @@
 <script>
 export default {
   head: {
-    title: 'Submission page ð',
+    title: 'Submission page',
     meta: [
       { hid: 'description', name: 'description', content: 'Submission description' }
     ]
