@@ -1,4 +1,7 @@
 module.exports = {
+  build: {
+    vendor: ['axios'] // Add axios in the vendor.bundle.js
+  },
   head: {
     titleTemplate: '%s - Shannonisms',
     meta: [
