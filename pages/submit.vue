@@ -24,7 +24,7 @@ export default {
     ]
   },
   async asyncData ({ params }) {
-    let { data } = await axios.get('https://ltts.netlify.com/v1/game-of-thrones/s1e1.json');
+    let { data } = await axios.get('https://ltts.pw/v1/game-of-thrones/s1e1.json');
     return { data };
   }
 }
